@@ -44,7 +44,7 @@ func main() {
 	c.OnScraped(func(r *colly.Response) {
 		fmt.Println("Scraping complete")
 
-		err := os.Mkdir("assets/images", 0750)
+		err := os.MkdirAll("assets/images", 0750)
 		if err != nil && !os.IsExist(err) {
 			log.Fatal(err)
 		}
